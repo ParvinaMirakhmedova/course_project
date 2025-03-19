@@ -3,7 +3,7 @@ select
     p.patient_id
     , p.full_name
     , p.age
-    , p.gender
+    , p.sex
     , p.occupation
     , p.address
     , d.dm_type
