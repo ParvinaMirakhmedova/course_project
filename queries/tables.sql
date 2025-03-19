@@ -2,8 +2,7 @@ create table if not exists patients(
     patient_ID integer not null unique primary key--Patient_ID
     , full_name varchar(50) not null  --Name
     , age integer not null  --Age in years
-    , sex varchar(50) not null --Sex
-    , gender char(1)  --Gender
+    , sex char(1) --Gender
     , occupation varchar(50)  --Occupation
     , address varchar (100) not null -- Address
 );
@@ -37,7 +36,7 @@ select
     p.patient_id
     , p.full_name
     , p.age
-    , p.gender
+    , p.sex
     , p.occupation
     , p.address
     , d.dm_type
