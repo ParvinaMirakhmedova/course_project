@@ -6,9 +6,8 @@
             "Name": "full_name",
             "Age in years": "age",
             "Sex": "sex",
-            "Gender": "gender",
             "Occupation": "occupation",
-            "Address": "address",
+            "Address": "address"
         }
     },
     "diabetic retinopathy": {
