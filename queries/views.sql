@@ -1,4 +1,4 @@
-create view v_patients as
+create view view1_patients as
 select 
     p.patient_id
     , p.full_name

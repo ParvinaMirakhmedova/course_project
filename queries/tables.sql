@@ -1,4 +1,4 @@
-create table if not exists patients(
+create table if not exists patients_1(
     patient_ID integer not null unique primary key--Patient_ID
     , full_name varchar(50) not null  --Name
     , age integer not null  --Age in years
@@ -8,7 +8,7 @@ create table if not exists patients(
 );
 
 
-create table if not exists diabetic_retinopathy(
+create table if not exists diabetic_retinopathy_1(
  	patient_ID integer not null
     , full_name varchar(50) not null  --Name
     , dm_type varchar(50)  --Diabetes Mellitus type
@@ -21,7 +21,7 @@ create table if not exists diabetic_retinopathy(
     , foreign key(patient_ID) references patients(patient_ID)
 );
 
-create table if not exists diseases(
+create table if not exists diseases_1(
     patient_ID integer not null  --Patient_ID
     , neuropathy varchar(50)  --does Neuropathy present or not
     , nephropathy varchar(50)  -- does renal pathology present or not
@@ -31,28 +31,3 @@ create table if not exists diseases(
     , foreign key(patient_ID) references patients(patient_ID)
 );
 
-create view v_patients as
-select 
-    p.patient_id
-    , p.full_name
-    , p.age
-    , p.sex
-    , p.occupation
-    , p.address
-    , d.dm_type
-    , d.renal_function
-    , d.duration
-    , d.diabetic_retinopathy
-    , d.fbg
-    , d.hereditary
-    , ds.neuropathy
-    , ds.nephropathy
-    , ds.smoking
-    , ds.bmi
-from patients p
-left join diabetic_retinopathy d on p.patient_id = d.patient_id
-left join diseases ds on p.patient_id = ds.patient_id;
-select * from patients;
-select * from diseases;
-select* from diabetic_retinopathy;
-select* from v_patients;
